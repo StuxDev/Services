@@ -3,6 +3,12 @@
 All notable changes to Stux.Dev Services (services.stux.dev) are documented here. This
 project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.0.1
+
+### Fixed
+
+- Sm.lol's icon no longer sits in the bordered tile
+
 ## v1.0.0
 
 ### Added
