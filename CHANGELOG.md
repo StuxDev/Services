@@ -3,6 +3,12 @@
 All notable changes to Stux.Dev Services (services.stux.dev) are documented here. This
 project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v1.0.3
+
+### Fixed
+
+- Stux.Dev is marked Coming soon (`data-state="soon"`)
+
 ## v1.0.2
 
 ### Fixed

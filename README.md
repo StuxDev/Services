@@ -31,7 +31,7 @@ from the `stux-dev` status source, `StuxDev/Status`), or `data-state` for the fi
 
 | Card | What it is | Site | Repo | Badge | Status source |
 |---|---|---|---|---|---|
-| Stux.Dev | Free web tools and utilities, no accounts, ads or trackers | [stux.dev](https://stux.dev) | [StuxDev](https://github.com/StuxDev) (organisation) | Live (Online / Degraded / Offline) | `stux-dev:stux-dev` |
+| Stux.Dev | Free web tools and utilities, no accounts, ads or trackers | [stux.dev](https://stux.dev) | [StuxDev](https://github.com/StuxDev) (organisation) | Coming soon | `stux-dev:stux-dev` |
 | Stux.Dev Status | Live status and uptime history of every Stux.Dev service | [status.stux.dev](https://status.stux.dev) | [StuxDev/Status](https://github.com/StuxDev/Status) | Live, overall status (All operational / Degraded / Partial outage / Major outage) | `stux-dev:*` |
 
 ### Services
