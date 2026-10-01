@@ -39,7 +39,7 @@ a single dependency-free Node script; the only requirement is having Node itself
   service's own `global.media.<domain>/icon.png` or its repo.
 - **Only two things load from elsewhere**, both Stux.Dev's own: live status from
   `raw.githubusercontent.com/StuxDev/Status` and the footer logo from `global.media.stux.dev`.
-  SeasonalOverlaysLibrary is vendored in `assets/js/seasonal-overlays-library.js`. If you add
+  SeasonalOverlaysLibrary loads from `https://seasonaloverlayslibrary.stuxapis.net` (StuxAPIs), and the hero credits it. If you add
   another external request, update the Privacy Policy.
 
 ## Adding or retiring a service card
@@ -69,7 +69,7 @@ something is retired, add a **Discontinued** section after Templates for it.
 
 ## Seasonal overlays
 
-`main.js` asks the vendored SeasonalOverlaysLibrary for today's preset from its calendar. It plays once per
+`main.js` asks SeasonalOverlaysLibrary for today's preset from its calendar. It plays once per
 browser session (a `sessionStorage` flag), never on its own for people with
 `prefers-reduced-motion`, and the hero button (labelled with today's preset) replays it. If the
 library isn't present, the button stays hidden and nothing else changes.
