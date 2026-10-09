@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://global.media.stux.dev/logo.png" height="100" alt="Stux.Dev Logo">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://global.media.stux.dev/logo-light.png"><source media="(prefers-color-scheme: light)" srcset="https://global.media.stux.dev/logo-dark.png"><img src="https://global.media.stux.dev/logo-dark.png" height="100" alt="Stux.Dev Logo"></picture>
 </p>
 
 # Stux.Dev Services
