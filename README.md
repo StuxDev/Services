@@ -90,6 +90,10 @@ dependency-free Node script (`dev-server.js`); Node just needs to be installed. 
 GitHub Pages, deployed by Actions, with the custom domain `services.stux.dev` (the `CNAME` file and
 the Pages settings). DNS: a `CNAME` record for `services` pointing at `stuxdev.github.io`.
 
+## Versioning
+
+This project uses [Date Versioning](https://datevers.ing): each release is numbered by its UTC release date as `YY.MM.DD` (for example `26.10.23`), with `-1`, `-2`… for later releases the same day. See [CHANGELOG.md](CHANGELOG.md) for what changed in each release.
+
 ## License
 
 &copy; 2026 Stux.Dev. All rights reserved. This repository is not licensed for reuse or

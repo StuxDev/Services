@@ -1,7 +1,24 @@
 # Changelog
 
 All notable changes to Stux.Dev Services (services.stux.dev) are documented here. This
-project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+project adheres to [Date Versioning](https://datevers.ing) since v26.10.23 (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## v26.10.23
+
+### Added
+
+- A custom Discord link preview on every page (a component embed in the page's `<head>`, in Stux.Dev orange): the homepage shows what the site is and links the main services, the other pages show their name and description. The 404 page and the `/changelog/` redirect have none
+- A full favicon set: `favicon.ico` (16, 32 and 48px), `apple-touch-icon.png`, and `site.webmanifest` with 192px, 512px and maskable 512px icons, linked from every page including the 404 page
+- `tests/site.test.js`, which checks every page's favicon tags and Discord embed (valid JSON, under 3,000 bytes, allowed components only), the web manifest, and that the changelog page reads `vYY.MM.DD` and `vYY.MM.DD-N` headings
+- `tests/version.sh`, which checks that `VERSION.md` is a valid Date Version, a real calendar date not in the future, and the same as the newest entry in this changelog
+
+### Changed
+
+- Switched from Semantic Versioning to [Date Versioning](https://datevers.ing): releases are numbered by their UTC release date as `YY.MM.DD`, with `-1`, `-2`… for later releases the same day. This release follows v1.1.1
+- `commit.sh` and `commit.bat` refuse a `VERSION.md` that isn't a valid Date Version or is dated in the future (UTC), and warn when it's dated before today
+- `README.md` and `CONTRIBUTING.md` describe Date Versioning and the release steps
+- The CI version check and the dev server now expect Date Versions and serve `.webmanifest` as `application/manifest+json`
+- The favicon links now point at the local icon files instead of the media host's light and dark icons
 
 ## v1.1.1
 
