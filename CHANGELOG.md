@@ -3,6 +3,14 @@
 All notable changes to Stux.Dev Services (services.stux.dev) are documented here. This
 project adheres to [Date Versioning](https://datevers.ing) since v26.10.23 (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v26.11.06-1
+
+### Changed
+
+- The README's release steps run the tests and give the tag as `vYY.MM.DD` (it still said `vX.Y.Z`), its copyright line
+  names Stux.Group, and Sm.lol's repository is listed as private rather than missing. CONTRIBUTING notes the badge icons
+  are 256 × 256.
+
 ## v26.11.06
 
 ### Added

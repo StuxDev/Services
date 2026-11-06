@@ -40,7 +40,7 @@ from the `stux-dev` status source, `StuxDev/Status`), or `data-state` for the fi
 |---|---|---|---|---|---|
 | Stuxs.Tools | Free browser utilities | [stuxs.tools](https://stuxs.tools) | private, not linked | Live | `stux-dev:stuxs-tools` |
 | Downl.one | A media downloader | [downl.one](https://downl.one) | private, not linked | Live | `stux-dev:downl-one` |
-| Sm.lol | Short links, bio pages, QR codes and more | [sm.lol](https://sm.lol) | none, not linked | Live | `stux-dev:sm-lol` |
+| Sm.lol | Short links, bio pages, QR codes and more | [sm.lol](https://sm.lol) | private, not linked | Live | `stux-dev:sm-lol` |
 
 ### Labs
 
@@ -81,7 +81,7 @@ dependency-free Node script (`dev-server.js`); Node just needs to be installed. 
 1. Update `CHANGELOG.md`
 2. Bump `VERSION.md`
 3. Update this README if relevant
-4. Run `./commit.sh` (or `commit.bat`): it reads `VERSION.md`, commits, and tags `vX.Y.Z`
+4. Run `bash tests/version.sh` and `node tests/site.test.js`, then `./commit.sh` (or `commit.bat`): it reads `VERSION.md`, commits, and tags `vYY.MM.DD`
 5. `git push origin main --tags`; the release workflow then publishes a GitHub Release from the
    matching `CHANGELOG.md` section
 
@@ -96,7 +96,7 @@ This project uses [Date Versioning](https://datevers.ing): each release is numbe
 
 ## License
 
-&copy; 2026 Stux.Dev. All rights reserved. This repository is not licensed for reuse or
+&copy; 2026 Stux.Group. All rights reserved. This repository is not licensed for reuse or
 redistribution. Lato and Poppins (`assets/fonts/`) are under the SIL Open Font License.
 
 ---
