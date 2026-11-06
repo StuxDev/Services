@@ -3,6 +3,25 @@
 All notable changes to Stux.Dev Services (services.stux.dev) are documented here. This
 project adheres to [Date Versioning](https://datevers.ing) since v26.10.23 (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v26.11.06
+
+### Added
+
+- `scripts/badge-icons.py` (from StuxGroup/Services, adapted from TheRidgwells/Projects), which builds badge-style
+  service icons in Stux.Dev's colours: the Stux.Dev mark on a round avatar, with a badge in the corner saying what the
+  service is.
+
+### Changed
+
+- **Every card uses its full name, with its own icon.** "Status" is now Stux.Dev Status, with a heartbeat badge on the
+  Stux.Dev mark; the templates are Stux.Dev Soonpage, Maintenancepage, Servicepage and GitHub Pages Redirect, each
+  with its own badge (hourglass, spanner, browser window, arrow) instead of the shared Stux.Dev icon. The icons' alt
+  text uses the same full names, and so do the README's tables.
+
+### Removed
+
+- `assets/img/services/status.svg`, replaced by the Stux.Dev Status badge icon.
+
 ## v26.10.23
 
 ### Added

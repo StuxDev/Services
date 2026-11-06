@@ -53,10 +53,10 @@ from the `stux-dev` status source, `StuxDev/Status`), or `data-state` for the fi
 
 | Card | What it is | Site | Repo | Badge | Status source |
 |---|---|---|---|---|---|
-| Soonpage | "Coming soon" page template | [soonpage.stux.dev](https://soonpage.stux.dev) | [StuxDev/soonpage](https://github.com/StuxDev/soonpage) | Template | none (`data-state="template"`) |
-| Maintenancepage | Maintenance page template | [maintenancepage.stux.dev](https://maintenancepage.stux.dev) | [StuxDev/maintenancepage](https://github.com/StuxDev/maintenancepage) | Template | none (`data-state="template"`) |
-| Servicepage | Placeholder for services not yet set up | [servicepage.stux.dev](https://servicepage.stux.dev) | [StuxDev/servicepage](https://github.com/StuxDev/servicepage) | Template | none (`data-state="template"`) |
-| GitHub Pages Redirect | Redirects username.github.io to a custom domain | none | [StuxDev/stuxdev.github.io](https://github.com/StuxDev/stuxdev.github.io) | Template | none (`data-state="template"`) |
+| Stux.Dev Soonpage | "Coming soon" page template | [soonpage.stux.dev](https://soonpage.stux.dev) | [StuxDev/soonpage](https://github.com/StuxDev/soonpage) | Template | none (`data-state="template"`) |
+| Stux.Dev Maintenancepage | Maintenance page template | [maintenancepage.stux.dev](https://maintenancepage.stux.dev) | [StuxDev/maintenancepage](https://github.com/StuxDev/maintenancepage) | Template | none (`data-state="template"`) |
+| Stux.Dev Servicepage | Placeholder for services not yet set up | [servicepage.stux.dev](https://servicepage.stux.dev) | [StuxDev/servicepage](https://github.com/StuxDev/servicepage) | Template | none (`data-state="template"`) |
+| Stux.Dev GitHub Pages Redirect | Redirects username.github.io to a custom domain | none | [StuxDev/stuxdev.github.io](https://github.com/StuxDev/stuxdev.github.io) | Template | none (`data-state="template"`) |
 
 This list (and the matching cards on the site) is the source of truth for what's listed. Update
 both together when a card is added, retired or renamed. Each card shows one badge above its
