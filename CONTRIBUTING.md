@@ -67,6 +67,23 @@ something is retired, add a **Discontinued** section after Templates for it.
    class and `data-state="discontinued"`, drop any dead Website link, and add a one-line `<p class="discontinued-note">` saying why
 6. Update the hero's counts if they changed
 
+## Live status eyebrow
+
+The pill above the hero headline doubles as a live status badge. It's a link to the status page with
+`data-status-eyebrow="stux-dev:*"` (the whole status page; `"<source>:<slug>"` would follow one monitor), and holds two spans:
+
+```html
+<a class="eyebrow" href="https://status.stux.dev" target="_blank" rel="noopener" data-status-eyebrow="stux-dev:*"><span class="eyebrow-label">Stux.Dev</span><span class="eyebrow-state" hidden></span></a>
+```
+
+`main.js` fills it from the same `summary.json` fetch as the cards and the status band (no second request). Once the
+status loads, it shows only the status: All operational, Degraded, Partial outage or Major outage (one monitor: Online,
+Degraded or Offline), hides `.eyebrow-label`, and adds the class `up`, `degraded` (also used for partial) or `down`. The
+CSS keeps the eyebrow's size, padding, font and pill shape, and takes a status badge's colours (`--ok`, `--warn`,
+`--bad`: text in the colour, background at 10%, border at 30%, 35% when down) and a 7px dot that pulses when up, but
+not under `prefers-reduced-motion`. If the fetch fails, nothing changes and it stays the plain "Stux.Dev" eyebrow.
+Check it in dark and light, and in an outage state (swap the `summary.json` response in the browser's dev tools).
+
 ## Seasonal overlays
 
 `main.js` asks SeasonalOverlaysLibrary for today's preset from its calendar. It plays once per

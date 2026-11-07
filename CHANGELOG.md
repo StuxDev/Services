@@ -3,6 +3,16 @@
 All notable changes to Stux.Dev Services (services.stux.dev) are documented here. This
 project adheres to [Date Versioning](https://datevers.ing) since v26.10.23 (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v26.11.07
+
+### Added
+
+- The eyebrow above the hero headline is now a live status badge too. It links to status.stux.dev and, once the status
+  loads, shows only the overall status (All operational, Degraded, Partial outage or Major outage) in the status
+  colour, with a dot that pulses when everything is up (not with reduced motion). It keeps the eyebrow's size and pill
+  shape, reuses the cards' `summary.json` fetch, and stays the plain "Stux.Dev" eyebrow if the status can't load.
+  CONTRIBUTING documents it.
+
 ## v26.11.06-2
 
 ### Added
