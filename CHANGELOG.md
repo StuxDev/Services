@@ -3,6 +3,15 @@
 All notable changes to Stux.Dev Services (services.stux.dev) are documented here. This
 project adheres to [Date Versioning](https://datevers.ing) since v26.10.23 (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v26.11.07-1
+
+### Changed
+
+- The GitHub Release is published when the release reaches `main`, not when its tag is pushed. Tags are pushed with
+  `test` before the pull request is merged, so releases used to be announced before they were live. The workflow now
+  runs on pushes to `main`, publishes the release for `VERSION.md`'s version if it doesn't exist yet (checking its tag
+  is part of `main`), and does nothing otherwise. The README's release steps and CONTRIBUTING match.
+
 ## v26.11.07
 
 ### Added
