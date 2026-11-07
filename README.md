@@ -13,7 +13,7 @@ site and, where it's public, its own repository. It's built the same way as
 
 - Plain HTML, CSS and JavaScript: no framework, no bundler, no dependencies to install
 - Dark and light themes, following your system setting
-- **Live status** on each card, read from [status.stux.dev](https://status.stux.dev)
+- **Live status** on each card and in the hero's eyebrow, read from [status.stux.dev](https://status.stux.dev)
   (`StuxDev/Status`, powered by [GitHup](https://githup.stux.group))
 - **Seasonal overlays** from [SeasonalOverlaysLibrary](https://seasonaloverlayslibrary.stuxapis.net)
   (StuxAPIs): today's preset plays once per visit (never with reduced motion), and the hero button replays it
