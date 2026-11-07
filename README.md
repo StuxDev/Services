@@ -82,8 +82,9 @@ dependency-free Node script (`dev-server.js`); Node just needs to be installed. 
 2. Bump `VERSION.md`
 3. Update this README if relevant
 4. Run `bash tests/version.sh` and `node tests/site.test.js`, then `./commit.sh` (or `commit.bat`): it reads `VERSION.md`, commits, and tags `vYY.MM.DD`
-5. `git push origin main --tags`; the release workflow then publishes a GitHub Release from the
-   matching `CHANGELOG.md` section
+5. `git push origin test --tags` and open a pull request from `test` into `main`
+6. Once it's merged, the release workflow publishes the GitHub Release for `VERSION.md`'s version, with the notes from
+   the matching `CHANGELOG.md` section (pushing the tag with `test` doesn't publish anything)
 
 ## Hosting
 

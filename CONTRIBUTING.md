@@ -101,7 +101,7 @@ each its own folder with an `index.html`, linked from the **Boring Legal Stuff**
 
 - Work on `test`, or on a feature branch off it. Never push to `main`
 - Changes reach `main` only through a pull request from `test` into `main`, which needs CI to pass and is reviewed and merged by Leo
-- Merging into `main` deploys the site to GitHub Pages. Release commits and tags are made on `test` (`git push origin test --tags`) and go live when the pull request is merged
+- Merging into `main` deploys the site to GitHub Pages and publishes the release's GitHub Release (`.github/workflows/release.yml`). Release commits and tags are made on `test` (`git push origin test --tags`) and go live when the pull request is merged
 
 ## Versioning
 
