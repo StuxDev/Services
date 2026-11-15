@@ -15,7 +15,7 @@ Questions: [hello@stux.dev](mailto:hello@stux.dev).
 ```
 git clone https://github.com/StuxDev/Services.git
 cd Services
-./dev-server.sh
+./dev-server.sh          # add --lan to open it from a phone on your network
 ```
 
 No install step: there's no `package.json`, no dependencies, nothing to build. `dev-server.js` is

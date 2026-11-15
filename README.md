@@ -70,9 +70,10 @@ of precedence), otherwise a live badge when it has a `data-monitor` (`<source>:<
 ```
 ./dev-server.sh          # http://127.0.0.1:8080, DEV_MODE forced on
 ./dev-server.sh 3000 --no-dev-mode
+./dev-server.sh --lan    # also open it from a phone on your network
 ```
 
-On Windows, use `dev-server.bat` instead. No `npm install` needed: the dev server is a single
+Add `--lan` to open it from a phone or another device on your local network: it listens on all interfaces instead of `127.0.0.1` only, and prints the addresses to open (usually the `192.168.x.x` one; allow Node through the firewall if asked). On Windows, use `dev-server.bat` instead. No `npm install` needed: the dev server is a single
 dependency-free Node script (`dev-server.js`); Node just needs to be installed. See
 [CONTRIBUTING.md](CONTRIBUTING.md) for more.
 
