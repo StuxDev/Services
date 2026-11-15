@@ -6,19 +6,25 @@
 // forced on for local runs without ever touching (or risking a commit of)
 // the real, gitignored-free, always-`false` file in assets/js/dev-mode.js.
 //
-// Usage: node dev-server.js [port] [--no-dev-mode]
+// Usage: node dev-server.js [port] [--no-dev-mode] [--lan]
+//   --lan   listen on all interfaces so phones and other devices on your network can open it
+//           (prints the addresses to open); without it the server stays on 127.0.0.1 only
 const http = require("http");
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
 
 const ROOT = __dirname;
 const args = process.argv.slice(2);
 let port = 8080;
 let devMode = true;
+let host = "127.0.0.1";
 
 for (const arg of args) {
   if (arg === "--no-dev-mode") {
     devMode = false;
+  } else if (arg === "--lan") {
+    host = "0.0.0.0";
   } else if (/^\d+$/.test(arg)) {
     port = parseInt(arg, 10);
   } else {
@@ -43,7 +49,14 @@ const MIME = {
 };
 
 const server = http.createServer((req, res) => {
-  const urlPath = decodeURIComponent(req.url.split("?")[0]);
+  let urlPath;
+  try {
+    urlPath = decodeURIComponent(req.url.split("?")[0]);
+  } catch {
+    res.writeHead(400, { "Content-Type": MIME[".html"] });
+    res.end("<h1>400 — Bad request</h1>");
+    return;
+  }
 
   if (urlPath === "/assets/js/dev-mode.js") {
     res.writeHead(200, { "Content-Type": MIME[".js"] });
@@ -51,7 +64,13 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  let filePath = path.join(ROOT, urlPath);
+  // Never serve anything outside the repo (e.g. /..%2f..%2f), which matters once --lan exposes it.
+  const filePath = path.join(ROOT, urlPath);
+  if (filePath !== ROOT && !filePath.startsWith(ROOT + path.sep)) {
+    res.writeHead(404, { "Content-Type": MIME[".html"] });
+    res.end("<h1>404 — Not found</h1>");
+    return;
+  }
 
   // Directory / pretty-URL fallback: /legal/privacy/ -> /legal/privacy/index.html
   const tryPaths = [filePath];
@@ -81,8 +100,18 @@ const server = http.createServer((req, res) => {
   fs.createReadStream(found).pipe(res);
 });
 
-server.listen(port, "127.0.0.1", () => {
+server.listen(port, host, () => {
   console.log(`Stux.Dev Services running at http://127.0.0.1:${port}`);
+  if (host === "0.0.0.0") {
+    // This machine's IPv4 addresses, minus loopback
+    const addrs = Object.values(os.networkInterfaces())
+      .flat()
+      .filter((a) => a && (a.family === "IPv4" || a.family === 4) && !a.internal)
+      .map((a) => a.address);
+    console.log("On your local network (--lan), open one of these on the other device:");
+    for (const a of addrs) console.log(`    http://${a}:${port}`);
+    console.log("  (usually the 192.168.x.x one; allow Node through the firewall if asked)");
+  }
   if (devMode) {
     console.log("DEV_MODE forced on for this run (banner shows) — pass --no-dev-mode to disable.");
   } else {

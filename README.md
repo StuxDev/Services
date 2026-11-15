@@ -70,9 +70,10 @@ of precedence), otherwise a live badge when it has a `data-monitor` (`<source>:<
 ```
 ./dev-server.sh          # http://127.0.0.1:8080, DEV_MODE forced on
 ./dev-server.sh 3000 --no-dev-mode
+./dev-server.sh --lan    # also open it from a phone on your network
 ```
 
-On Windows, use `dev-server.bat` instead. No `npm install` needed: the dev server is a single
+Add `--lan` to open it from a phone or another device on your local network: it listens on all interfaces instead of `127.0.0.1` only, and prints the addresses to open (usually the `192.168.x.x` one; allow Node through the firewall if asked). On Windows, use `dev-server.bat` instead. No `npm install` needed: the dev server is a single
 dependency-free Node script (`dev-server.js`); Node just needs to be installed. See
 [CONTRIBUTING.md](CONTRIBUTING.md) for more.
 
@@ -82,8 +83,8 @@ dependency-free Node script (`dev-server.js`); Node just needs to be installed. 
 2. Bump `VERSION.md`
 3. Update this README if relevant
 4. Run `bash tests/version.sh` and `node tests/site.test.js`, then `./commit.sh` (or `commit.bat`): it reads `VERSION.md`, commits, and tags `vYY.MM.DD`
-5. `git push origin test --tags` and open a pull request from `test` into `main`
-6. Once it's merged, the release workflow publishes the GitHub Release for `VERSION.md`'s version, with the notes from
+5. `git push origin test --tags` and open a pull request into `staging` (`gh pr create --base staging --head test`); once it's merged and checked, open one from `staging` into `main` (`gh pr create --base main --head staging`)
+6. Once that's merged into `main`, the release workflow publishes the GitHub Release for `VERSION.md`'s version, with the notes from
    the matching `CHANGELOG.md` section (pushing the tag with `test` doesn't publish anything)
 
 ## Hosting
@@ -95,7 +96,7 @@ the Pages settings). DNS: a `CNAME` record for `services` pointing at `stuxdev.g
 
 This project uses [Date Versioning](https://datevers.ing): each release is numbered by its UTC release date as `YY.MM.DD` (for example `26.10.23`), with `-1`, `-2`… for later releases the same day. See [CHANGELOG.md](CHANGELOG.md) for what changed in each release.
 
-Work happens on the `test` branch, and changes reach `main` only through a pull request from `test`. Release commits and tags are made on `test` (`git push origin test --tags`) and go live when that pull request is merged.
+Work and releases happen on the `test` branch. Changes reach `staging` and then `main` (live) only through pull requests: `test` → `staging` → `main`. Release commits and tags are made on `test` (`git push origin test --tags`) and go live when the `staging` → `main` pull request is merged.
 
 ## License
 
